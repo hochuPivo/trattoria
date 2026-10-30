@@ -1,0 +1,28 @@
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.socials__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  transition: color var(--transition-base);
+}
+.socials__link:hover {
+  color: var(--gold-bright);
+}
+.socials__link--tg {
+  width: 28px;
+  height: 28px;
+}
+.socials__link--2gis {
+  width: 24px;
+  height: 24px;
+}
+@media (max-width: 768px) {
+  .socials {
+    gap: 16px;
+  }
+}

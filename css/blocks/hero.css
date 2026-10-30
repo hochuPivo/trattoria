@@ -1,0 +1,213 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 680px;
+  background-color: var(--bg-hero);
+  overflow: hidden;
+}
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
+  z-index: var(--z-overlay);
+}
+.hero__inner {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-max);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 var(--container-padding-desktop);
+  box-sizing: border-box;
+  z-index: var(--z-content);
+}
+.hero__left {
+  position: absolute;
+  left: var(--container-padding-desktop);
+  top: clamp(240px, 34vh, 360px);
+  width: auto;
+  max-width: 38%;
+  font-family: var(--font-cormorant);
+  font-weight: 400;
+  font-size: clamp(60px, 4.8vw, 96px);
+  line-height: 0.95;
+  color: var(--white);
+}
+.hero__text {
+  display: block;
+}
+.hero__text--accent {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(70px, 10vw, 320px);
+  color: var(--gold-bright);
+  line-height: 0.5;
+}
+.hero__right {
+  position: absolute;
+  left: 50%;
+  top: clamp(260px, 36vh, 380px);
+  width: auto;
+  max-width: calc(50% - var(--container-padding-desktop));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  box-sizing: border-box;
+}
+.hero__title {
+  font-family: var(--font-cormorant);
+  font-weight: 300;
+  font-size: clamp(100px, 8.5vw, 180px);
+  color: var(--white);
+  letter-spacing: -0.01em;
+  max-width: 100%;
+  white-space: nowrap;
+}
+.hero__subtitle {
+  width: auto;
+  font-family: var(--font-script);
+  font-style: italic;
+  line-height: 0;
+  font-weight: 400;
+  font-size: clamp(54px, 4.8vw, 96px);
+  color: var(--gold-bright);
+  text-align: center;
+  margin-right: 15px;
+  max-width: 100%;
+}
+.hero__cta-wrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: clamp(30px, 5vh, 60px);
+}
+@media (max-width: 1400px) {
+  .hero {
+    min-height: 640px;
+  }
+  .hero__inner {
+    padding: 0 var(--container-padding-tablet);
+  }
+  .hero__left {
+    left: var(--container-padding-tablet);
+    top: clamp(200px, 32vh, 300px);
+    font-size: clamp(56px, 4.5vw, 78px);
+  }
+  .hero__text--accent {
+    font-size: clamp(66px, 5.2vw, 92px);
+  }
+  .hero__right {
+    top: clamp(220px, 34vh, 320px);
+    max-width: calc(50% - var(--container-padding-tablet));
+  }
+  .hero__title {
+    font-size: clamp(90px, 8.2vw, 140px);
+  }
+  .hero__subtitle {
+    font-size: clamp(52px, 4.6vw, 82px);
+  }
+  .hero__cta-wrap {
+    bottom: clamp(25px, 4vh, 50px);
+  }
+}
+@media (max-width: 1200px) {
+  .hero {
+    height: 100svh;
+    max-height: 720px;
+    min-height: 540px;
+  }
+  .hero__left {
+    top: clamp(180px, 30vh, 260px);
+    font-size: clamp(50px, 4.4vw, 68px);
+  }
+  .hero__text--accent {
+    font-size: clamp(60px, 5.2vw, 80px);
+  }
+  .hero__right {
+    top: clamp(200px, 32vh, 280px);
+    max-width: calc(52% - var(--container-padding-tablet));
+  }
+  .hero__title {
+    font-size: clamp(80px, 7.5vw, 115px);
+  }
+  .hero__subtitle {
+    font-size: clamp(48px, 4.5vw, 70px);
+  }
+  .hero__cta-wrap {
+    bottom: 35px;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 100svh;
+    max-height: 640px;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(24px, 4vh, 36px);
+    padding: 80px var(--container-padding-mobile) 60px;
+  }
+  .hero__left {
+    display: none;
+  }
+  .hero__right {
+    position: static;
+    left: auto;
+    right: auto;
+    top: auto;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+    margin-top: -50px;
+  }
+  .hero__title {
+    font-size: clamp(52px, 13.5vw, 84px);
+    width: 100%;
+    max-width: 100%;
+  }
+  .hero__subtitle {
+    font-size: clamp(40px, 10vw, 62px);
+    width: auto;
+    max-width: 100%;
+    margin-right: 0;
+  }
+  .hero__cta-wrap {
+    bottom: 20px;
+  }
+}
+@media (max-width: 400px) {
+  .hero {
+    max-height: 560px;
+    min-height: 440px;
+  }
+  .hero__inner {
+    padding: 70px 16px 50px;
+    gap: 20px;
+  }
+  .hero__title {
+    font-size: clamp(46px, 13vw, 54px);
+  }
+  .hero__subtitle {
+    font-size: clamp(34px, 9.5vw, 42px);
+  }
+}

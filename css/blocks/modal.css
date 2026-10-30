@@ -1,0 +1,57 @@
+.proto-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  padding: 20px;
+}
+.proto-modal--active {
+  opacity: 1;
+  visibility: visible;
+}
+.proto-modal__box {
+  background: #ffffff;
+  color: #000000;
+  padding: 36px 40px;
+  border-radius: 0;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(15px);
+  transition: transform 0.25s ease;
+}
+.proto-modal--active .proto-modal__box {
+  transform: translateY(0);
+}
+.proto-modal__text {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+.proto-modal__close {
+  display: inline-block;
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 10px 30px;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.proto-modal__close:hover {
+  background: #ffffff;
+  color: #000000;
+}
